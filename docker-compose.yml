@@ -1,0 +1,29 @@
+version: "3.3"
+
+services:
+  api-gateway:
+    build: ./babyapinest-api-gateway
+    container_name: babyapinest-api-gateway
+    command: npm run start
+    restart: unless-stopped
+    ports: 
+        - "3001:3001"
+    networks: 
+        - babyapinest
+    depends_on: 
+        - api-gateway-db
+  
+  api-gateway-db:
+    image: mongo:latest
+    volumes:
+        - api-dateway-db-mongo:/data/db
+    ports:
+        - "27017:27017"
+
+networks:
+  babyapinest:
+    driver: bridge
+
+
+volumes:
+  api-dateway-db-mongo:
