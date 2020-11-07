@@ -1,0 +1,6 @@
+[submodule "babyapinest-api-gateway"]
+	path = babyapinest-api-gateway
+	url = https://github.com/Inexpediency/babyapinest-api-gateway.git
+[submodule "babyapinest-mail-queue"]
+	path = babyapinest-mail-queue
+	url = https://github.com/Inexpediency/babyapinest-mail-queue.git
